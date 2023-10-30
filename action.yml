@@ -82,6 +82,8 @@ outputs:
     description: 'The commit SHA of the pull request branch.'
 runs:
   using: 'node16'
+  env:
+    GITHB_SERVER_URL: ${{ env.GITHUB_SERVER_URL || "https://github.com" }}
   main: 'dist/index.js'
 branding:
   icon: 'git-pull-request'
